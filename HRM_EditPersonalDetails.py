@@ -1,0 +1,35 @@
+from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.support.ui import Select
+
+driver = webdriver.Chrome()
+driver.get("https://opensource-demo.orangehrmlive.com/")
+element = driver.find_element_by_id("txtUsername")
+element.send_keys("Admin")
+element = driver.find_element_by_id("txtPassword")
+element.send_keys("admin123")
+element.send_keys(Keys.RETURN)
+element = driver.find_element_by_id("menu_pim_viewMyDetails")
+element.click()
+element = driver.find_element_by_id("btnSave")
+element.click()
+element = driver.find_element_by_id("personal_txtEmpFirstName")
+element.clear()
+element.send_keys("John1")
+element = driver.find_element_by_id("personal_txtEmpLastName")
+element.clear()
+element.send_keys("Smith1")
+element = driver.find_element_by_id("personal_txtEmployeeId")
+element.clear()
+element.send_keys("JS12345")
+element = driver.find_element_by_id("personal_optGender_1")
+element.click()
+element = Select(driver.find_element_by_id("personal_cmbNation"))
+element.select_by_visible_text("American")
+element = driver.find_element_by_id("personal_txtEmpNickName")
+element.clear()
+element.send_keys("Johny")
+element = driver.find_element_by_id("btnSave")
+element.click()
+
+
